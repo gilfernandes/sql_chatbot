@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "sql-chain-playground"
+version = "0.1.0"
+description = "SQL Chain Playground project used to test the capabilities of the LangChain's SQL chain"
+authors = ["Gil Fernandes <gil.fernandes@onepointltd.com>"]
+readme = "README.md"
+packages = [{include = "sql_analyzer"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.0.247"
+prompt-toolkit = "^3.0.39"
+openai = "^0.27.8"
+python-dotenv = "^1.0.0"
+mysqlclient = "^2.2.0"
+chainlit = "^0.6.1"
+GeoAlchemy2 = "^0.14.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
