@@ -26,11 +26,14 @@ if __name__ == "__main__":
         question = session.prompt(
             HTML("<b>Type <u>Your question</u></b>  ('q' to exit): ")
         )
-        if question.lower() in ['q', 'exit']:
+        if question.lower() in ["q", "exit"]:
             break
         if len(question) == 0:
             continue
         try:
             logger.info(get_colored_text(agent_executor.run(question), "green"))
         except Exception as e:
-            logger.info(get_colored_text("Error occurred in agent", "red"), get_colored_text(str(e), "red"))
+            logger.info(
+                get_colored_text("Error occurred in agent", "red"),
+                get_colored_text(str(e), "red"),
+            )
