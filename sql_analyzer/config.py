@@ -9,8 +9,8 @@ load_dotenv()
 
 
 class Config:
-    model = "gpt-3.5-turbo-16k-0613"
-    # model = 'gpt-4-0613'
+    # model = "gpt-3.5-turbo-16k-0613"
+    model = "gpt-4-0613"
     llm = ChatOpenAI(model=model, temperature=0)
     db_uri = os.getenv("DB_CONNECTION_STRING")
 
