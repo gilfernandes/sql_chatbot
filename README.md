@@ -1,5 +1,12 @@
 # SQL Chain Playground
 
+This project is a chatbot user interface which allows users to query a specific database using natural language.
+It allows you to query in a technical, but also in a business like way.
+
+So you can ask questions like e.g:
+
+- Can you plaase show me all the indices used in this database?
+- Which are the 5 most popular films?
 
 ## Installation
 
