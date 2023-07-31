@@ -6,7 +6,8 @@ from langchain.callbacks.manager import (
     CallbackManagerForToolRun,
 )
 
-from typing import Optional, List
+from typing import Optional, List, Any
+from json import dumps
 
 
 class ListViewSQLDatabaseTool(BaseSQLDatabaseTool, BaseTool):
@@ -26,6 +27,39 @@ class ListViewSQLDatabaseTool(BaseSQLDatabaseTool, BaseTool):
     async def _arun(
         self,
         tool_input: str = "",
+        run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
+    ) -> str:
+        raise NotImplementedError("ListTablesSqlDbTool does not support async")
+
+
+class ListIndicesSQLDatabaseTool(BaseSQLDatabaseTool, BaseTool):
+    """Tool for getting view names."""
+
+    name = "sql_db_list_indices"
+    description = """Input is an a list of tables, output is a JSON string with the names of the indices, column names and wether the index is unique.
+
+    Example Input: "table1, table2, table3, table4"
+    """
+
+    def _run(
+        self,
+        table_names: str = "",
+        run_manager: Optional[CallbackManagerForToolRun] = None,
+    ) -> str:
+        """Get the indices for all tables."""
+        tables: List[str] = table_names.split(", ")
+        indices_list: List[List[Any]] = []
+        try:
+            for table in tables:
+                indices: List[Any] = self.db._inspector.get_indexes(table)
+                indices_list.extend(indices)
+            return dumps(indices_list)
+        except Exception as e:
+            return f"Error: {e}"
+
+    async def _arun(
+        self,
+        table_names: str = "",
         run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
     ) -> str:
         raise NotImplementedError("ListTablesSqlDbTool does not support async")
@@ -82,4 +116,5 @@ class ExtendedSQLDatabaseToolkit(SQLDatabaseToolkit):
         db = base_tools[0].db
         base_tools.append(ListViewSQLDatabaseTool(db=db))
         base_tools.append(InfoViewSQLDatabaseTool(db=db))
+        base_tools.append(ListIndicesSQLDatabaseTool(db=db))
         return base_tools
