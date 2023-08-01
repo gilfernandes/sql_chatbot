@@ -57,3 +57,14 @@ alter table address add column point_location varchar(256);
 update address set point_location = ST_AsText(location);
 alter table address drop column location;
 ```
+
+## Nots on .env file
+
+You will also need a `.env` file in the directory you are running this application as well as an installed MySQL database server with the Sakila database installed.
+
+The .env file should have the following variables:
+
+```
+DB_CONNECTION_STRING=mysql+mysqldb://<user>:<password>@localhost/sakila
+OPENAI_API_KEY=<openapi-key>
+```
