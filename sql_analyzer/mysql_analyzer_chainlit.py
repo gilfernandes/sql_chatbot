@@ -16,5 +16,5 @@ async def main(message):
     cb = cl.LangchainCallbackHandler(stream_final_answer=True)
 
     resp = await cl.make_async(agent_executor.run)(message, callbacks=[cb])
-    geo_location_msg = cl.Message(content=resp)
-    await geo_location_msg.send()
+    final_message = cl.Message(content=resp)
+    await final_message.send()

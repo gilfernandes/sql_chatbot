@@ -1,8 +1,8 @@
-# Welcome to SQL Analyzer! 🚀🤖
+# Welcome to SQL Analyst! 🚀🤖
 
-Hi there, Developer! 👋 
+Hi there, Analyst! 👋 
 
-The SQL Analyzer is connected to the MySQL Sakila demo database. You can use this chat tool to analyze it.
+The SQL Analyst is connected to the MySQL Sakila demo database. You can use this chat tool to analyze it.
 
 ## Useful Links 🔗
 
