@@ -5,8 +5,9 @@ It allows you to query in a technical, but also in a business like way.
 
 So you can ask questions like e.g:
 
-- Can you plaase show me all the indices used in this database?
+- Can you please show me all the indices used in this database?
 - Which are the 5 most popular films?
+- Which tables are referencing the actor table?
 
 ## Installation
 
