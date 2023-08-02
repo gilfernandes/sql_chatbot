@@ -12,9 +12,10 @@ langchain = "^0.0.247"
 prompt-toolkit = "^3.0.39"
 openai = "^0.27.8"
 python-dotenv = "^1.0.0"
-mysqlclient = "^2.2.0"
+# mysqlclient = "^2.2.0"
 chainlit = "^0.6.1"
 GeoAlchemy2 = "^0.14.1"
+snowflake-sqlalchemy = "1.4.7"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.7.0"

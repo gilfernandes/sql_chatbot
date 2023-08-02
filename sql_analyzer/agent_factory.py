@@ -16,6 +16,7 @@ import re
 from sql_analyzer.config import cfg
 from sql_analyzer.log_init import logger
 from sql_analyzer.sql.sql_tool import ExtendedSQLDatabaseToolkit
+from sql_analyzer.sql_db_factory import sql_db_factory
 
 FINAL_ANSWER_ACTION = "Final Answer:"
 
@@ -95,7 +96,7 @@ def setup_memory() -> Tuple[Dict, ConversationBufferMemory]:
 
 
 def init_sql_db_toolkit() -> SQLDatabaseToolkit:
-    db = SQLDatabase.from_uri(cfg.db_uri, view_support=True)
+    db: SQLDatabase = sql_db_factory()
     toolkit = ExtendedSQLDatabaseToolkit(db=db, llm=cfg.llm)
     return toolkit
 

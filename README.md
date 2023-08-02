@@ -12,12 +12,12 @@ So you can ask questions like e.g:
 ## Installation
 
 ```
+# conda remove -n langchain_sql --all
 conda create -n langchain_sql python=3.11
 conda activate langchain_sql
 pip install langchain
 pip install prompt_toolkit
 pip install openai
-pip install python-dotenv
 pip install mysqlclient
 pip install chainlit
 pip install geoalchemy2
@@ -28,6 +28,32 @@ pip install black
 
 pip install poetry
 poetry install
+
+```
+
+### Snowflake
+
+```
+# conda activate base
+# conda remove -n langchain_snowflake --all
+conda create -n langchain_snowflake python=3.11
+conda activate langchain_snowflake
+pip install langchain
+pip install snowflake-sqlalchemy
+pip install SQLAlchemy-Utils
+pip install openai
+pip install chainlit
+# pip install black
+
+# pip install poetry
+# poetry install
+```
+
+
+To install as a package, please use:
+
+```bash
+pip install -e .
 ```
 
 This might be useful under Ubuntu
