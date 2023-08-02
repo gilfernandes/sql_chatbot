@@ -40,7 +40,7 @@ conda create -n langchain_snowflake python=3.11
 conda activate langchain_snowflake
 pip install langchain
 pip install snowflake-sqlalchemy
-pip install SQLAlchemy-Utils
+# pip install SQLAlchemy-Utils
 pip install openai
 pip install chainlit
 # pip install black
@@ -65,12 +65,12 @@ sudo apt install pkg-config
 
 For development:
 ```
-chainlit run ./sql_analyzer/mysql_analyzer_chainlit.py --port 8082 -w
+chainlit run ./sql_analyzer/mysql_analyzer_chainlit.py --port 8084 -w
 ```
 
 Normally:
 ```
-chainlit run ./sql_analyzer/mysql_analyzer_chainlit.py --port 8083
+chainlit run ./sql_analyzer/mysql_analyzer_chainlit.py --port 8084
 ```
 
 ## Notes on the Sakila DB
@@ -84,7 +84,7 @@ update address set point_location = ST_AsText(location);
 alter table address drop column location;
 ```
 
-## Nots on .env file
+## Notes on .env file
 
 You will also need a `.env` file in the directory you are running this application as well as an installed MySQL database server with the Sakila database installed.
 
@@ -93,4 +93,15 @@ The .env file should have the following variables:
 ```
 DB_CONNECTION_STRING=mysql+mysqldb://<user>:<password>@localhost/sakila
 OPENAI_API_KEY=<openapi-key>
+
+# Snowflake
+SNOWFLAKE_ACCOUNT=****
+SNOWFLAKE_USER=****
+SNOWFLAKE_PASSWORD=****
+SNOWFLAKE_DATABASE=SNOWFLAKE_SAMPLE_DATA
+SNOWFLAKE_SCHEMA=TPCDS_SF10TCL
+SNOWFLAKE_WAREHOUSE=DEMO_WH
+SNOWFLAKE_HOST=****
+
+SELECTED_DB=snowflake # snowflake or mysql
 ```
