@@ -8,7 +8,7 @@ The SQL Analyst is connected to a Snowflake TPCDS_SF10TCL demo database. You can
 
 - **Documentation:** Get started with our comprehensive [TPC Benchmark™ DS (TPC-DS)](https://docs.snowflake.com/en/user-guide/sample-data-tpcds) 📚
 
-Please try it out and send me feedback 💻😊
+Please try it out and send Gil some feedback 💻😊
 
 ## Sample queries
 
