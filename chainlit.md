@@ -6,7 +6,7 @@ The SQL Analyst is connected to a Snowflake TPCDS_SF10TCL demo database. You can
 
 ## Useful Links 🔗
 
-- **Documentation:** Get started with our comprehensive [Sakila Database](https://dev.mysql.com/doc/sakila/en/sakila-structure.html) 📚
+- **Documentation:** Get started with our comprehensive [TPC Benchmark™ DS (TPC-DS)](https://docs.snowflake.com/en/user-guide/sample-data-tpcds) 📚
 
 Please try it out and send me feedback 💻😊
 
